@@ -61,7 +61,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 11px 0 22px;
+  padding: 11px 0 5px;
 }
 
 .logo svg {
@@ -77,17 +77,46 @@ body {
   gap: 30px;
 }
 
+.menu__item {
+  position: relative;
+  font-size: 18px;
+}
+
+.menu__item::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  text-transform: uppercase;
+  font-weight: 700;
+  opacity: 0;
+  transition: opacity 0.3s;
+  font-family: "Raleway-Bold", sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+}
+
 .menu__link {
   font-family: "Raleway-Medium", sans-serif;
-  font-weight: 500;
-  font-size: 18px;
+  font-weight: 400;
+  display: inline-block;
   text-transform: uppercase;
-  transition: font-weight 0.05s;
+  transition: opacity 0.3s;
+}
+
+.menu__item:hover::after {
+  opacity: 1;
+}
+
+.menu__item:hover .menu__link {
+  opacity: 0;
 }
 
 .menu__link:hover {
   font-family: "Raleway-Bold", sans-serif;
-  font-weight: 700;
+  /* font-weight: 700; */
 }
 
 .social__list {
@@ -107,4 +136,183 @@ body {
 .social__link:hover svg {
   color: #00a9bd;
   transform: scale(1.25);
+}
+
+/* HEADER CONTENT */
+
+.header__content {
+  background-image: url(../images/header_bg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-align: center;
+  color: #fff;
+  background-position: center center;
+}
+
+.header__content-inner {
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh - 119px);
+}
+
+.header__title {
+  font-family: "Raleway-Bold", sans-serif;
+  font-size: 128px;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 32px;
+  margin-top: 20vh;
+}
+
+.header__booking {
+  align-self: center;
+}
+
+.booking {
+  text-transform: uppercase;
+  font-family: "Raleway-Bold", sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  color: #fff;
+  background-color: #00a9bd;
+  border: none;
+  cursor: pointer;
+  padding: 22px 30px;
+  line-height: 1;
+  border-radius: 30px;
+  transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+.booking:hover {
+  color: #000;
+  background-color: #ffe093;
+  transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+.header__info {
+  display: flex;
+  justify-content: center;
+  gap: 150px;
+  margin-top: auto;
+  margin-bottom: 87px;
+}
+
+.header__info-item {
+  font-family: "Raleway-Medium", sans-serif;
+  font-size: 24px;
+  font-weight: 500;
+  position: relative;
+  padding-left: 34px;
+}
+
+.header__info-item span {
+  font-family: "Raleway-Bold", sans-serif;
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.header__info-item::before {
+  content: "";
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  background-image: url(../images/header_icon.svg);
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* TOUR INFO  */
+
+.tour-info {
+  padding-top: 150px;
+}
+
+.tour-info__inner {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 10px;
+}
+
+.imagebox-two {
+  grid-column: span 2;
+}
+
+.tour-info__addcontent {
+  grid-column: span 2;
+}
+
+.tour-info__images-box {
+  position: relative;
+}
+
+.tour-info__img {
+  border-radius: 20px;
+}
+
+.tour-info__img-descr {
+  position: absolute;
+  left: 29px;
+  bottom: 15px;
+  font-size: 16px;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 10px;
+  border-radius: 30px;
+  width: 212px;
+  text-align: center;
+}
+
+.tour-info__content {
+  grid-column: span 3;
+  padding-left: 100px;
+}
+
+.tour-info__title {
+  font-size: 32px;
+  font-weight: 400;
+  text-transform: uppercase;
+  margin-bottom: 30px;
+}
+
+.tour-info__title span {
+  display: inline-block;
+  padding: 0 40px;
+  background-image: url(../images/decor_line.svg);
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: contain;
+}
+
+.tour-info__addcontent {
+  padding-left: 50px;
+  display: flex;
+  flex-direction: column;
+}
+
+.tour-info__addcontent-title {
+  font-size: 32px;
+  font-weight: 400;
+  text-transform: uppercase;
+  margin-bottom: 13px;
+}
+
+.tour-info__addcontent-title span {
+  display: inline-block;
+  padding: 37px 69px 17px 53px;
+  background-image: url(../images/decor_oval.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+.tour-info__addcontent-text {
+  max-width: 390px;
+  padding-left: 70px;
+  margin-bottom: 30px;
+}
+
+.tour-info__booking {
+  margin-left: 70px;
+  margin-top: auto;
+  align-self: self-start;
 }
