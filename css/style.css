@@ -55,6 +55,22 @@ body {
   line-height: 1.15;
 }
 
+.title {
+  font-size: 32px;
+  font-weight: 400;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.title span {
+  display: inline-block;
+  padding: 0 40px;
+  background-image: url(../images/decor_line.svg);
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: contain;
+}
+
 /* HEADER */
 
 .header__top {
@@ -64,11 +80,11 @@ body {
   padding: 11px 0 5px;
 }
 
-.logo svg {
+.header__logo svg {
   transition: color 0.3s ease;
 }
 
-.logo:hover svg {
+.header__logo:hover svg {
   color: #00a9bd;
 }
 
@@ -114,6 +130,58 @@ body {
   opacity: 0;
 }
 
+.menu__btn {
+  display: none;
+  width: 40px;
+  height: 25px;
+  align-items: center;
+  border: none;
+  background-color: transparent;
+  padding: 0;
+  position: relative;
+}
+
+.menu__btn::before,
+.menu__btn::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: #000;
+  transition: all 0.3s;
+}
+
+.menu__btn::before {
+  top: 0;
+}
+
+.menu__btn::after {
+  bottom: 0;
+}
+
+.menu--active .menu__btn span {
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.menu--active .menu__btn::before {
+  transform: rotate(45deg);
+  top: 11px;
+}
+
+.menu--active .menu__btn::after {
+  transform: rotate(-45deg);
+  bottom: 11px;
+}
+
+.menu__btn span {
+  display: block;
+  height: 2px;
+  width: 100%;
+  background-color: #000;
+}
+
 .menu__link:hover {
   font-family: "Raleway-Bold", sans-serif;
   /* font-weight: 700; */
@@ -129,11 +197,11 @@ body {
   display: inline-block;
 }
 
-.social__link svg {
+.header__social .social__link svg {
   transition: color 0.3s ease, transform 0.3s ease;
 }
 
-.social__link:hover svg {
+.header__social .social__link:hover svg {
   color: #00a9bd;
   transform: scale(1.25);
 }
@@ -141,7 +209,6 @@ body {
 /* HEADER CONTENT */
 
 .header__content {
-  background-image: url(../images/header_bg.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   text-align: center;
@@ -248,6 +315,9 @@ body {
 
 .tour-info__img {
   border-radius: 20px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .tour-info__img-descr {
@@ -268,19 +338,8 @@ body {
 }
 
 .tour-info__title {
-  font-size: 32px;
-  font-weight: 400;
-  text-transform: uppercase;
   margin-bottom: 30px;
-}
-
-.tour-info__title span {
-  display: inline-block;
-  padding: 0 40px;
-  background-image: url(../images/decor_line.svg);
-  background-repeat: no-repeat;
-  background-position: center bottom;
-  background-size: contain;
+  text-align: left;
 }
 
 .tour-info__addcontent {
@@ -315,4 +374,278 @@ body {
   margin-left: 70px;
   margin-top: auto;
   align-self: self-start;
+}
+/* TOUR PROGRAM */
+
+/* .tour-program {
+} */
+
+.tour__program-inner {
+  padding: 150px 0 120px;
+  background-image: url(../images/map.png);
+  background-repeat: no-repeat;
+}
+
+.tour-program__title {
+  margin-bottom: 50px;
+}
+
+.tour-program__list {
+  display: grid;
+  gap: 10px 0;
+}
+
+.tour-program__item {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.tour-program__item:nth-child(even) .tour-program__content {
+  order: 1;
+  padding-right: 30px;
+}
+
+.tour-program__content {
+  padding-left: 50px;
+  padding-right: 90px;
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+
+.tour-program__content-box {
+  position: relative;
+}
+
+.tour-program__day {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-transform: uppercase;
+  font-size: 32px;
+  font-family: "Raleway-Bold", sans-serif;
+  font-weight: 700;
+  text-align: center;
+}
+
+.tour-program__day span {
+  padding-top: 7px;
+  font-size: 60px;
+}
+
+.tour-program__content-box svg {
+  color: #ffe093;
+  transition: color 0.3s ease;
+}
+
+.tour-program__item:hover svg {
+  color: #00a9bd;
+}
+/* 
+COUNTER */
+
+/* .tour-program__list {
+  counter-reset: number;
+}
+
+.tour-program__content-box {
+  counter-increment: number;
+}
+
+.tour-program__content-box::after {
+  content: "0" counter(number);
+}
+
+.tour-program__content-box::before {
+  content: "0" counter(number);
+}
+
+.tour-program__day {
+  content: "Day";
+} */
+
+/* SLIDER */
+
+.slider {
+  background-color: #b6e8ee;
+  padding: 50px 0 65px;
+  text-align: center;
+}
+
+.slider__title {
+  margin-bottom: 35px;
+}
+
+.slide__img {
+  display: inline-block;
+  border-radius: 25px;
+}
+
+.slide__buttons {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  cursor: pointer;
+}
+
+.button-prev {
+  left: 0;
+}
+.button-next {
+  right: 0;
+}
+/* 
+TOURS */
+
+.tours {
+  padding: 150px 0 100px;
+}
+
+.tours__title {
+  margin-bottom: 50px;
+}
+
+.tours__list {
+  display: flex;
+  gap: 35px;
+}
+
+.tours__item {
+  width: 160px;
+  position: relative;
+  color: #fff;
+  overflow: hidden;
+  cursor: pointer;
+  transition: width 0.5s;
+}
+
+.tours__item--active.tours__item {
+  width: 860px;
+}
+
+.tours__item-img {
+  height: 800px;
+  border-radius: 35px;
+  object-fit: cover;
+}
+
+.tours__item-title {
+  position: absolute;
+  bottom: 115px;
+  font-size: 40px;
+  font-family: "Raleway-SemiBold", sans-serif;
+  font-weight: 600;
+  text-transform: uppercase;
+  text-align: center;
+  left: 0;
+  right: 0;
+  opacity: 0;
+  white-space: nowrap;
+  transition: opacity 0.3s;
+}
+
+.tours__item--active .tours__item-title {
+  opacity: 1;
+}
+
+.tours__info-list {
+  position: absolute;
+  bottom: 24px;
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  gap: 55px;
+  left: 23px;
+}
+
+.tours__item--active .tours__info-list {
+  left: 32px;
+}
+
+.tours__info-flag {
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 35px;
+  padding: 28px 52px;
+}
+
+.tours__info-flag img {
+  max-width: 30px;
+  height: 30px;
+}
+
+.tours__info-price,
+.tours__info-date {
+  font-size: 24px;
+  font-family: "Raleway-Medium", sans-serif;
+  font-weight: 500;
+  padding-left: 40px;
+  position: relative;
+}
+
+.tours__info-price::after,
+.tours__info-date::after {
+  content: "";
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  background-image: url(../images/header_icon.svg);
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* FOOTER */
+
+.footer {
+  padding: 50px 0;
+  background-color: #00a9bd;
+  color: #fff;
+}
+
+.footer__inner {
+  display: flex;
+  gap: 0 200px;
+}
+
+.footer__logo {
+  margin-right: auto;
+  align-self: center;
+}
+
+.footer__nav {
+  font-family: "Raleway-Medium", sans-serif;
+  font-weight: 500;
+}
+
+.footer__nav-item + .footer__nav-item {
+  margin-top: 20px;
+}
+
+.footer__contacts-title {
+  font-family: "Raleway-Medium", sans-serif;
+  font-weight: 500;
+  margin-bottom: 16px;
+}
+
+.footer__address {
+  font-style: normal;
+}
+
+.footer__address-name {
+  margin-bottom: 25px;
+}
+
+.footer__phone {
+  margin-bottom: 55px;
+  display: inline-block;
+}
+
+.footer__list {
+  margin-right: 145px;
+}
+
+.footer__list-item + .footer__list-item {
+  margin-top: 20px;
 }
