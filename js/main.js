@@ -5,14 +5,19 @@ menuBtn.addEventListener("click", () => {
   menu.classList.toggle("menu--active");
 });
 
-const swiper = new Swiper(".swiper", {
-  effect: "fade",
-  loop: "true",
+const swiper = new Swiper('.swiper', {
+  effect: 'fade',
+  loop: true,
   navigation: {
-    nextEl: ".button-next",
-    prevEl: ".button-prev",
+    nextEl: '.button-next',
+    prevEl: '.button-prev',
+  },
+  pagination: {
+    el: '.swiper-pagination',
   },
 });
+
+
 
 const items = document.querySelectorAll(".tours__item");
 

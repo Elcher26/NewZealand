@@ -649,3 +649,11 @@ TOURS */
 .footer__list-item + .footer__list-item {
   margin-top: 20px;
 }
+
+.swiper-pagination-bullet {
+  opacity: 0.5;
+}
+
+.swiper-pagination {
+  display: none;
+}

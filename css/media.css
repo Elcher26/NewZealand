@@ -5,6 +5,11 @@
     font-size: 14px;
     width: 155px;
   }
+
+  .tours__info-flag {
+    padding: 16px 34px;
+
+  }
 }
 
 @media (max-width: 1500px) {
@@ -21,6 +26,32 @@
     padding-left: 0;
   }
 }
+
+@media (max-width: 1370px) {
+  .tour-program__content {
+    padding-left: 10px;
+    padding-right: 20px;
+  }
+  .tours__info-list {
+    gap: 5px;
+  }
+.tours__item--active .tours__info-item + .tours__info-item {
+  opacity: 1;
+}
+
+.tours__info-item + .tours__info-item {
+  opacity: 0;
+}
+}
+
+
+@media (max-width: 1280px) {
+  .tours__info-list,
+  .tours__item--active .tours__info-list {
+    left: 5px;
+  }
+}
+
 
 @media (max-width: 1100px) {
   .header__title {
@@ -52,14 +83,57 @@
   .tour-info__addcontent {
     grid-column: span 3;
   }
+  .tour-program__content-box::after {
+  font-size: 40px;
+  bottom: 30%;
+}
+.tour-program__content-box svg {
+  width: 130px;
+}
+.tour-program__content-box::before {
+font-size: 26px;
+top: 30%;
+}
+
+.tours__info-list,
+.tours__item--active .tours__info-list {
+  left: 0;
+  right: 0;
+}
+.tours__info-list {
+  flex-direction: column;
+  gap: 25px;
+}
+
+.tours__item-title {
+  bottom: 225px;
+}
+
+.tours__item.tours__item--active .tours__info-list {
+  backdrop-filter: brightness(0.5);
+  bottom: 0;
+  padding: 20px 0;
+  border-bottom-left-radius: 35px;
+  border-bottom-right-radius: 35px;
+}
 }
 
 @media (max-width: 920px) {
+
+  .slide__buttons {
+    display: none;
+  }
+
+  .swiper-pagination {
+  display: block;
+}
+
   .menu__btn {
     display: flex;
     position: relative;
     z-index: 2;
   }
+
   .menu__list {
     position: absolute;
     left: 0;
@@ -93,6 +167,12 @@
     gap: 50px;
     justify-content: center;
   }
+  .tour-program__item {
+    display: block;
+  }
+  .tours__item-title {
+    font-size: 36px;
+  }
 }
 
 @media (max-width: 720px) {
@@ -125,6 +205,44 @@
   }
   .tour-info__img-descr {
     width: 180px;
+  }
+  .tour-program__inner 
+  .slider {
+    padding-bottom: 50px;
+  }
+.tours__list {
+  flex-direction: column;
+}
+
+.tours__item.tours__item--active {
+  width: 100%;
+  height: 800px;
+
+}
+.tours__item {
+  width: 100%;
+  height: 200px;
+  transition: height 0.5s;
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+}
+
+
+.tours {
+  padding: 50 0;
+
+}
+.tours__info-list {
+  bottom: -40px;
+}
+}
+
+@media (max-width: 600px) {
+  .tour-program__content {
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+    justify-content: center;
+    gap: 15px;
   }
 }
 
