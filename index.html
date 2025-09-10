@@ -69,7 +69,7 @@
       </div>
       <div
         class="header__content"
-        style="background-image: url(../images/header_bg.jpg)"
+        style="background-image: url(/images/header_bg.jpg)"
       >
         <div class="container">
           <div class="header__content-inner">
@@ -166,7 +166,7 @@
 
       <section class="tour-program">
         <div class="container">
-          <div class="tour__program-inner">
+          <div class="tour-program__inner">
             <h2 class="tour-program__title title">
               <span>Tour program</span>
             </h2>
@@ -274,50 +274,29 @@
         </div>
       </section>
     <section class="slider">
-        <div class="container">
-          <h2 class="title slider__title">
-            <span>top impressions you will get</span>
-          </h2>
-          <!-- Slider main container -->
-    <div class="swiper">
-            <div class="swiper-wrapper">
+  <div class="container">
+    <h2 class="title slider__title"><span>top impressions you will get</span></h2>
 
-              <div class="swiper-slide">
-                <img
-                  class="slide__img"
-                  src="images/slide/1.jpg"
-                  alt="gallery pic"
-                />
-              </div>
-              <div class="swiper-slide">
-                <img
-                  class="slide__img"
-                  src="images/slide/2.jpg"
-                  alt="gallery pic"
-                />
-              </div>
-              <div class="swiper-slide">
-                <img
-                  class="slide__img"
-                  src="images/slide/3.jpg"
-                  alt="gallery pic"
-                />
-              </div>
-            </div>
-            </div class="swiper-pagination"></div>
-            <div class="slide__buttons button-prev">
-              <svg width="72" height="28">
-                <use xlink:href="images/sprite.svg#arrow-left"></use>
-              </svg>
-            </div>
-            <div class="slide__buttons button-next">
-              <svg width="72" height="28">
-                <use xlink:href="images/sprite.svg#arrow-right"></use>
-              </svg>
-            </div>
-          </div>
-        </div>
-      </section>
+    <div class="swiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide"><img class="slide__img" src="images/slide/1.jpg" alt="gallery pic"></div>
+        <div class="swiper-slide"><img class="slide__img" src="images/slide/2.jpg" alt="gallery pic"></div>
+        <div class="swiper-slide"><img class="slide__img" src="images/slide/3.jpg" alt="gallery pic"></div>
+      </div>
+
+      <!-- пагінація -->
+      <div class="swiper-pagination"></div>
+
+      <!-- стрілки всередині .swiper -->
+      <button class="slide__buttons button-prev" aria-label="Previous">
+        <svg width="72" height="28"><use href="images/sprite.svg#arrow-left"></use></svg>
+      </button>
+      <button class="slide__buttons button-next" aria-label="Next">
+        <svg width="72" height="28"><use href="images/sprite.svg#arrow-right"></use></svg>
+      </button>
+    </div>
+  </div>
+</section>
             <section class="tours">
         <div class="container">
           <h2 class="title tours__title"><span>our other tours</span></h2>

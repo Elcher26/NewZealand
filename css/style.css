@@ -380,7 +380,7 @@ body {
 /* .tour-program {
 } */
 
-.tour__program-inner {
+.tour-program__inner {
   padding: 150px 0 120px;
   background-image: url(../images/map.png);
   background-repeat: no-repeat;
